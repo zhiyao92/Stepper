@@ -10,16 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var sliderStatus: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func stepperFunction(_ sender: UIStepper) {
+        print(Int(sender.value))
+        slider.value = Float(sender.value)
+        sliderStatus.text = Int(sender.value).description
     }
-
-
 }
 
